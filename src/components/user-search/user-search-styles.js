@@ -1,7 +1,15 @@
 import styled from 'styled-components';
 
+import devices from '../../assets/styles/devices';
+
 export const StyledUserSearch = styled.div`
   max-width: 35rem;
+  margin-bottom: 3rem;
+
+  @media ${devices.tablet} {
+    margin-right: 3rem;
+    margin-bottom: 0;
+  }
 `;
 
 export const StyledHeader = styled.header`

@@ -41,7 +41,8 @@ export const StyledButton = styled.button`
 
       &:hover {
         background: ${props =>
-          shade(0.9, props.theme.primary_color)};
+          shade(0.3, props.theme.primary_color)};
+        color: ${props => props.theme.white};
       }
     `}
 `;

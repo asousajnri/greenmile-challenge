@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { StyledContainer } from "./container-styles";
+import { StyledContainer } from './container-styles';
 
 const Container = ({ children }) => {
   return <StyledContainer>{children}</StyledContainer>;

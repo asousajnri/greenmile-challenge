@@ -13,4 +13,6 @@ export default {
   button_primary: '#8BB03E',
   button_secondary: '#28343D',
   button_white: '#FFFFFF',
+
+  paraghaph_color: '#696969',
 };

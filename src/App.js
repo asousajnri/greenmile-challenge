@@ -1,11 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import { Container, UserSearch } from "./components";
+import {
+  Container,
+  UserSearch,
+  UserInfos,
+} from './components';
 
 const App = () => {
   return (
     <Container>
       <UserSearch />
+      <UserInfos />
     </Container>
   );
 };

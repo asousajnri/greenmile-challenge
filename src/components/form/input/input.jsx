@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { StyledInput } from "./input-styles";
+import { StyledInput } from './input-styles';
 
-const Input = ({ name, type = "text", label }) => {
+const Input = ({ name, type = 'text', label }) => {
   return (
     <StyledInput>
       <label>{label}</label>
