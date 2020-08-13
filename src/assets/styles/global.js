@@ -1,15 +1,8 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   :root {
     font-size: 62.5%;
-
-    --background-color: #E9EBEE;
-    --primary-color: #8BB03E;
-    --secondary-color: #28343D;
-    --white-color: #FFFFFF;
-
-    --background-get-user: #FFFFFF;
   }
 
   * {
@@ -30,7 +23,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: var(--background-color);
+    background-color: ${(props) => props.theme.background_color_body};
   }
 
   #root {

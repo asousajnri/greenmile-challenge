@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { shade } from 'polished';
 
 export const StyledButton = styled.button`
   width: 100%;
@@ -8,9 +9,39 @@ export const StyledButton = styled.button`
   cursor: pointer;
   transition: 0.3s;
 
-  ${(props) =>
-    props.white &&
+  ${props =>
+    props.buttonTypeColor === 'primary' &&
     css`
-      background: #ffffff;
+      background: ${props => props.theme.button_primary};
+      color: ${props => props.theme.white};
+
+      &:hover {
+        background: ${props =>
+          shade(0.9, props.theme.primary_color)};
+      }
+    `}
+
+  ${props =>
+    props.buttonTypeColor === 'secondary' &&
+    css`
+      background: ${props => props.theme.button_secondary};
+      color: ${props => props.theme.white};
+
+      &:hover {
+        background: ${props =>
+          shade(0.9, props.theme.secondary_color)};
+      }
+    `}
+
+  ${props =>
+    props.buttonTypeColor === 'white' &&
+    css`
+      background: ${props => props.theme.button_white};
+      color: ${props => props.theme.black};
+
+      &:hover {
+        background: ${props =>
+          shade(0.9, props.theme.primary_color)};
+      }
     `}
 `;

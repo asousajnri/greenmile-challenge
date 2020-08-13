@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledUserSearch = styled.div`
   max-width: 35rem;
@@ -10,7 +10,8 @@ export const StyledHeader = styled.header`
   justify-content: center;
   align-items: center;
 
-  background: var(--background-get-user);
+  background: ${props =>
+    props.theme.background_user_search};
   padding: 5rem 2rem 4rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;

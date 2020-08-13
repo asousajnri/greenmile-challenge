@@ -1,10 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import Button from "../button";
-import Form from "../form";
+import Button from '../button';
+import Form from '../form';
 
-import { StyledUserSearch, StyledHeader } from "./user-search-styles";
-import greenLogo from "../../assets/images/green-logo.svg";
+import {
+  StyledUserSearch,
+  StyledHeader,
+} from './user-search-styles';
+
+import greenLogo from '../../assets/images/green-logo.svg';
 
 const UserSearch = () => {
   return (
@@ -15,13 +19,16 @@ const UserSearch = () => {
           Buscador <em>Dev</em>
         </h1>
         <p>
-          Insira um <em>nome</em> ou <em>apelido</em> de um <b>Dev</b> do{" "}
-          <b>Github</b> e descubra o que ele tem para oferecer.
+          Insira um <em>nome</em> ou <em>apelido</em> de um
+          <b>Dev</b> do <b>Github</b> e descubra o que ele
+          tem para oferecer.
         </p>
       </StyledHeader>
       <Form.Container>
         <Form.Input label="Nome ou Apelido" />
-        <Button>Buscar</Button>
+        <Button buttonTypeColor="white" type="submit">
+          Buscar
+        </Button>
       </Form.Container>
     </StyledUserSearch>
   );

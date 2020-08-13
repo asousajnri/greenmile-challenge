@@ -1,10 +1,19 @@
-import React from "react";
+import React from 'react';
 
-import { StyledButton } from "./button-styles";
+import { StyledButton } from './button-styles';
 
-const Button = ({ type, onClick, children }) => {
+const Button = ({
+  type,
+  onClick,
+  children,
+  buttonTypeColor,
+}) => {
   return (
-    <StyledButton type={type} onClick={onClick}>
+    <StyledButton
+      buttonTypeColor={buttonTypeColor}
+      type={type}
+      onClick={onClick}
+    >
       <span>{children}</span>
     </StyledButton>
   );
