@@ -15,6 +15,10 @@ export const StyledPhoto = styled.div`
   height: 25rem;
   width: 100%;
 
+  @media ${devices.mobile} {
+    height: 35rem;
+  }
+
   @media ${devices.desktop} {
     width: 25rem;
     height: auto;
@@ -32,9 +36,16 @@ export const StyledContent = styled.div`
   background: ${props => props.theme.white};
   padding: 3rem 2rem;
 
-  @media ${devices.desktop} {
+  @media ${devices.mobile} {
     padding: 3em;
-    flex: 1.5;
+  }
+
+  @media ${devices.desktop} {
+    flex: 1;
+  }
+
+  @media ${devices.widescreen} {
+    flex: 1.2;
   }
 
   h2 {

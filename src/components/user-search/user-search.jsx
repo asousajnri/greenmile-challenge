@@ -13,13 +13,10 @@ import greenLogo from '../../assets/images/green-logo.svg';
 
 const UserSearch = () => {
   return (
-    <FadeIn>
-      <StyledUserSearch>
+    <StyledUserSearch>
+      <FadeIn>
         <StyledHeader>
           <img src={greenLogo} alt="GreenMile Logo" />
-          {/* <h1>
-            Buscador <em>Dev</em>
-          </h1> */}
           <p>
             Insira um <em>nome</em> ou <em>apelido</em> de
             um
@@ -33,8 +30,8 @@ const UserSearch = () => {
             Buscar
           </Button>
         </Form.Container>
-      </StyledUserSearch>
-    </FadeIn>
+      </FadeIn>
+    </StyledUserSearch>
   );
 };
 

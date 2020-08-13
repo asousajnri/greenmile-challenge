@@ -24,8 +24,10 @@ const Profile = () => {
             fugiat eos a modi.
           </p>
           <span>
-            <i class="fab fa-github"></i>
-            <a href="#">URL do Github</a>
+            <i className="fab fa-github"></i>
+            <a href="https://github.com/asousajnri">
+              URL do Github
+            </a>
           </span>
         </StyledContent>
       </StyledProfile>
