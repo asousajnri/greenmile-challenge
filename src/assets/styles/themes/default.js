@@ -15,4 +15,5 @@ export default {
   button_white: '#FFFFFF',
 
   paraghaph_color: '#696969',
+  text_gray: '#586069',
 };

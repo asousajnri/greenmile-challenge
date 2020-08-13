@@ -4,7 +4,7 @@ import devices from '../../assets/styles/devices';
 
 export const StyledUserSearch = styled.div`
   max-width: 35rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 
   @media ${devices.tablet} {
     margin-right: 3rem;

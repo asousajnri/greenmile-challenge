@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import devices from '../../../assets/styles/devices';
 
 export const StyledProfile = styled.div`
+  margin-bottom: 4rem;
+
   @media ${devices.desktop} {
     display: flex;
+    margin-bottom: 6rem;
   }
 `;
 
@@ -45,7 +48,7 @@ export const StyledContent = styled.div`
   }
 
   p {
-    color: ${props => props.theme.paraghapg_color};
+    color: ${props => props.theme.text_gray};
     display: inline-block;
     margin-bottom: 2rem;
     font-size: 1.6rem;
