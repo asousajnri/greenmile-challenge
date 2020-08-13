@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledUserInfos = styled.div`
-  max-width: 35rem;
+  width: 100%;
+  max-width: 64.4rem;
 `;

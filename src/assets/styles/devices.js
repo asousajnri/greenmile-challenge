@@ -1,7 +1,7 @@
 export const breakpoints = {
   mobile: '768px',
   tablet: '769px',
-  desktop: '124px',
+  desktop: '1024px',
   widescreen: '1216px',
   fullhd: '1408px',
 };

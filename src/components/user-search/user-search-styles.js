@@ -4,7 +4,7 @@ import devices from '../../assets/styles/devices';
 
 export const StyledUserSearch = styled.div`
   max-width: 35rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 
   @media ${devices.tablet} {
     margin-right: 3rem;
@@ -20,9 +20,13 @@ export const StyledHeader = styled.header`
 
   background: ${props =>
     props.theme.background_user_search};
-  padding: 5rem 2rem 4rem;
+  padding: 4rem 2rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+
+  @media ${devices.desktop} {
+    padding: 3rem;
+  }
 
   img {
     width: 23rem;
@@ -43,6 +47,11 @@ export const StyledHeader = styled.header`
     font-size: 3rem;
     font-weight: 900;
     margin-bottom: 1rem;
+    color: ${props => props.theme.primary_color};
+  }
+
+  p {
+    font-size: 1.6rem;
   }
 
   em {
