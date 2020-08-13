@@ -7,6 +7,7 @@ export default createGlobalStyle`
     --background-color: #E9EBEE;
     --primary-color: #8BB03E;
     --secondary-color: #28343D;
+    --white-color: #FFFFFF;
 
     --background-get-user: #FFFFFF;
   }
@@ -16,6 +17,12 @@ export default createGlobalStyle`
     padding: 0;
     list-style: none;
     box-sizing: border-box;
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
   }
 
   html, body, #root {
@@ -42,5 +49,10 @@ export default createGlobalStyle`
   img {
     display: block;
     max-width: 100%;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
   }
 `;

@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Container, GetUser } from "./components";
+import { Container, UserSearch } from "./components";
 
 const App = () => {
   return (
     <Container>
-      <GetUser />
+      <UserSearch />
     </Container>
   );
 };

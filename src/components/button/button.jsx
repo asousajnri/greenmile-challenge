@@ -5,7 +5,7 @@ import { StyledButton } from "./button-styles";
 const Button = ({ type, onClick, children }) => {
   return (
     <StyledButton type={type} onClick={onClick}>
-      {children}
+      <span>{children}</span>
     </StyledButton>
   );
 };
