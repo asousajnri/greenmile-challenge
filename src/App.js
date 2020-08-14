@@ -11,7 +11,7 @@ import {
 
 const App = ({ firstSearch }) => {
   return (
-    <Container firstSearch={firstSearch}>
+    <Container>
       <UserSearch />
       {firstSearch && <UserInfos />}
     </Container>
