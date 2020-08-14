@@ -1,5 +1,6 @@
 export default {
-  firstSearch: false,
-  isFetch: false,
+  firstSearch: true,
+  firedSearch: false,
+  isFetch: true,
   devData: [],
 };

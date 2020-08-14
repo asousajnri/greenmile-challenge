@@ -6,15 +6,18 @@ import {
   Container,
   UserSearch,
   UserInfos,
+  LogMessage,
 } from './components';
 
-const App = () => {
+const App = ({ firstSearch }) => {
   return (
-    <Container>
+    <Container firstSearch={firstSearch}>
       <UserSearch />
-      <UserInfos />
+      {firstSearch && <UserInfos />}
     </Container>
   );
 };
 
-export default App;
+export default connect(state => ({
+  firstSearch: state.firstSearch,
+}))(App);
