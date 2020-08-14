@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import FadeIn from 'react-fade-in';
 
 import Button from '../button';
 import Form from '../form';
+import WaitingForSearch from '../waiting-for-research';
 
 import {
   StyledUserSearch,
@@ -11,9 +13,10 @@ import {
 
 import greenLogo from '../../assets/images/green-logo.svg';
 
-const UserSearch = () => {
+const UserSearch = ({ findedUSer }) => {
   return (
-    <StyledUserSearch>
+    <StyledUserSearch findedUSer={findedUSer}>
+      <WaitingForSearch />
       <FadeIn>
         <StyledHeader>
           <img src={greenLogo} alt="GreenMile Logo" />
@@ -35,4 +38,6 @@ const UserSearch = () => {
   );
 };
 
-export default UserSearch;
+export default connect(state => ({
+  findedUSer: state.findedUSer,
+}))(UserSearch);

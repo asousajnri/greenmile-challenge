@@ -1,15 +1,23 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import devices from '../../assets/styles/devices';
 
 export const StyledUserSearch = styled.div`
+  position: relative;
   max-width: 35rem;
-  margin-bottom: 6rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
 
-  @media ${devices.tablet} {
-    margin-right: 3rem;
-    margin-bottom: 0;
-  }
+  ${props =>
+    props.findedUSer &&
+    css`
+      margin-bottom: 6rem;
+
+      @media ${devices.tablet} {
+        margin-right: 3rem;
+        margin-bottom: 0;
+      }
+    `}
 `;
 
 export const StyledHeader = styled.header`
