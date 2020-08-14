@@ -14,7 +14,6 @@ export const StyledUserSearch = styled.div`
       margin-bottom: 6rem;
 
       @media ${devices.tablet} {
-        margin-right: 3rem;
         margin-bottom: 0;
       }
     `}

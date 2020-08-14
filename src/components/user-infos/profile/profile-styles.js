@@ -66,7 +66,10 @@ export const StyledContent = styled.div`
   }
 
   span {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+
+    display: flex;
+    align-items: center;
   }
 
   i {
