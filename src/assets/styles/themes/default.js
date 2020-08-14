@@ -6,6 +6,7 @@ export default {
 
   white: '#FFFFFF',
   black: '#333333',
+  red: '#f00f00',
 
   background_color_body: '#E9EBEE',
   background_user_search: '#FFFFFF',
