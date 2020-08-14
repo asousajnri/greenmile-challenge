@@ -29,13 +29,6 @@ const reducer = (state = INITIAL_STATE, action) => {
     };
   }
 
-  if (action.type === 'FIRST_SEARCH') {
-    return {
-      ...state,
-      firstSearch: action.firstSearch,
-    };
-  }
-
   return state;
 };
 

@@ -25,10 +25,3 @@ export const ifFetchinging = ifFetchingingValue => {
     isFetchinging: ifFetchingingValue,
   };
 };
-
-export const firstSearch = firstSearchValue => {
-  return {
-    type: 'FIRST_SEARCH',
-    firstSearch: firstSearchValue,
-  };
-};

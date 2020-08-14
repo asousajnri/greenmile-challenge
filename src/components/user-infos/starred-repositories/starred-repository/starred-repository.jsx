@@ -10,7 +10,14 @@ import {
   StyledFooter,
 } from './starred-repository-styles';
 
-const StarredRepository = ({ isFetchinging }) => {
+const StarredRepository = ({
+  isFetchinging,
+  fullName,
+  git_url,
+  language,
+  stargazers_count,
+  description,
+}) => {
   return (
     <>
       {isFetchinging ? (
@@ -19,31 +26,23 @@ const StarredRepository = ({ isFetchinging }) => {
         <StyledStarredRepository>
           <StyledHeader>
             <h3>
-              <a href="https://github.com/asousajnri">
-                Nome Repos
-              </a>
+              <a href={git_url}>{fullName}</a>
             </h3>
             <button>
               Star <i className="far fa-star"></i>
             </button>
           </StyledHeader>
           <StyledContent>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur
-              adipisicing elit. At assumenda totam nisi
-              officiis, quo ex tempore laboriosam, quidem,
-              saepe quos magnam impedit ullam. Fugiat quia
-              natus laborum dolores quaerat dicta.
-            </p>
+            <p>{description}</p>
           </StyledContent>
           <StyledFooter>
             <h4>
               <span className="ball"></span>
-              JavaScript
+              {language}
             </h4>
             <h4>
               <i className="far fa-star"></i>
-              4.1k
+              {stargazers_count}
             </h4>
           </StyledFooter>
         </StyledStarredRepository>

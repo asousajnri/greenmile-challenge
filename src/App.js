@@ -8,7 +8,7 @@ import {
   UserInfos,
 } from './components';
 
-const App = ({ firstSearch, findedUser }) => {
+const App = ({ findedUser }) => {
   if (findedUser) {
     document.body.classList.add('heightAuto');
   }
@@ -23,5 +23,4 @@ const App = ({ firstSearch, findedUser }) => {
 
 export default connect(state => ({
   findedUser: state.findedUser,
-  firstSearch: state.firstSearch,
 }))(App);

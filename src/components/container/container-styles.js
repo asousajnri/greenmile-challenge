@@ -4,8 +4,12 @@ import devices, {
   breakpoints,
 } from '../../assets/styles/devices';
 
-const styledFirstSearch = css`
+export const StyledContainer = styled.main`
+  display: flex;
   flex-direction: column;
+  max-width: ${breakpoints.desktop};
+  width: 100%;
+  height: 100%;
 
   @media ${devices.tablet} {
     padding-top: 6rem;
@@ -26,13 +30,4 @@ const styledFirstSearch = css`
           align-items: center;
           padding: 0 2rem;
         `}
-`;
-
-export const StyledContainer = styled.main`
-  display: flex;
-  max-width: ${breakpoints.desktop};
-  width: 100%;
-  height: 100%;
-
-  ${styledFirstSearch}
 `;

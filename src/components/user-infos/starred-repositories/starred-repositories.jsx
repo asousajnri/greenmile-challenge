@@ -1,15 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import StarredRepository from './starred-repository';
 
 import { StyledStarredRepositories } from './starred-repositories-styles';
 
-const StarredRepositories = () => {
+const StarredRepositories = ({ starredRepos }) => {
   return (
     <StyledStarredRepositories>
-      <StarredRepository />
+      {starredRepos.map(starredRepo => (
+        <StarredRepository
+          fullName={starredRepo.full_name}
+          git_url={starredRepo.git_url}
+          language={starredRepo.language}
+          stargazers_count={starredRepo.stargazers_count}
+          description={starredRepo.description}
+        />
+      ))}
     </StyledStarredRepositories>
   );
 };
 
-export default StarredRepositories;
+export default connect(state => ({
+  starredRepos: state.devData.starred,
+}))(StarredRepositories);

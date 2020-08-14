@@ -5,6 +5,7 @@ import FadeIn from 'react-fade-in';
 import * as ReduxActions from '../../store/actions';
 
 import api from '../../services/api';
+import timeout from '../../utils/timeout';
 
 import Button from '../button';
 import Form from '../form';
@@ -21,16 +22,11 @@ const UserSearch = ({
   findedUser,
   firedSearch,
   dispatch,
-  firstSearch,
 }) => {
   const inputRef = useRef(null);
 
   const handleSubmit = async e => {
     e.preventDefault();
-
-    if (!firstSearch) {
-      dispatch(ReduxActions.firstSearch(true));
-    }
 
     try {
       dispatch(ReduxActions.ifFetchinging(true));
@@ -48,30 +44,27 @@ const UserSearch = ({
             starred: [...starred.data],
           })
         );
-        setTimeout(() => {
+        timeout(() => {
           dispatch(ReduxActions.findedUser(true));
-        }, 3000);
+        });
       } else {
-        setTimeout(() => {
+        timeout(() => {
           dispatch(ReduxActions.findedUser(false));
-        }, 3000);
+        });
       }
     } catch (err) {
-      setTimeout(() => {
+      timeout(() => {
         dispatch(ReduxActions.findedUser(false));
-      }, 3000);
+      });
     } finally {
-      setTimeout(() => {
+      timeout(() => {
         dispatch(ReduxActions.ifFetchinging(false));
-      }, 3000);
+      });
     }
   };
 
   return (
-    <StyledUserSearch
-      findedUser={findedUser}
-      firstSearch={firstSearch}
-    >
+    <StyledUserSearch findedUser={findedUser}>
       {firedSearch && <WaitingForSearch />}
 
       <FadeIn>
@@ -99,7 +92,6 @@ const UserSearch = ({
 };
 
 export default connect(state => ({
-  firstSearch: state.firstSearch,
   findedUser: state.findedUser,
   firedSearch: state.firedSearch,
 }))(UserSearch);

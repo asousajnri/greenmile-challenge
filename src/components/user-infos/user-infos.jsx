@@ -5,12 +5,9 @@ import Section from '../section';
 import StarreRepositories from './starred-repositories';
 import Profile from './profile';
 
-import {
-  StyledUserInfos,
-  Alert,
-} from './user-infos-styles';
+import { StyledUserInfos } from './user-infos-styles';
 
-const UserInfos = ({ findedUser, firstSearch }) => {
+const UserInfos = ({ findedUser }) => {
   return (
     <StyledUserInfos>
       <Profile />
@@ -23,5 +20,4 @@ const UserInfos = ({ findedUser, firstSearch }) => {
 
 export default connect(state => ({
   findedUser: state.findedUser,
-  firstSearch: state.firstSearch,
 }))(UserInfos);

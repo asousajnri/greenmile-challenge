@@ -13,7 +13,7 @@ import {
 const Profile = ({ isFetchinging, devData }) => {
   console.log(devData);
 
-  const { avatar_url, bio, name, html_url } = devData.basic;
+  const { avatar_url, bio, name, html_url } = devData;
 
   return (
     <>
