@@ -45,4 +45,8 @@ export const StyledButton = styled.button`
         color: ${props => props.theme.white};
       }
     `}
+
+    span {
+      text-transform: uppercase;
+    }
 `;
