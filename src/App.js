@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { connect } from 'react-redux';
 
@@ -6,18 +6,22 @@ import {
   Container,
   UserSearch,
   UserInfos,
-  LogMessage,
 } from './components';
 
-const App = ({ firstSearch }) => {
+const App = ({ firstSearch, findedUser }) => {
+  if (findedUser) {
+    document.body.classList.add('heightAuto');
+  }
+
   return (
-    <Container>
+    <Container findedUser={findedUser}>
       <UserSearch />
-      {firstSearch && <UserInfos />}
+      {findedUser && <UserInfos />}
     </Container>
   );
 };
 
 export default connect(state => ({
+  findedUser: state.findedUser,
   firstSearch: state.firstSearch,
 }))(App);

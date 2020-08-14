@@ -19,11 +19,16 @@ export default createGlobalStyle`
   }
 
   html, body, #root {
-    height: 100vh;
+    height: 100%;
+
+    &.heightAuto {
+      height: auto;
+    };
   }
 
   body {
-    background-color: ${(props) => props.theme.background_color_body};
+    background-color: ${props =>
+      props.theme.background_color_body};
   }
 
   #root {

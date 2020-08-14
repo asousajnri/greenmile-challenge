@@ -6,10 +6,10 @@ import SectionLoading from './section-loading';
 
 import { StyledSection } from './section-styles';
 
-const Section = ({ isFetch, title, children }) => {
+const Section = ({ isFetchinging, title, children }) => {
   return (
     <>
-      {isFetch ? (
+      {isFetchinging ? (
         <SectionLoading>{children}</SectionLoading>
       ) : (
         <StyledSection>
@@ -24,5 +24,5 @@ const Section = ({ isFetch, title, children }) => {
 };
 
 export default connect(state => ({
-  isFetch: state.isFetch,
+  isFetchinging: state.isFetchinging,
 }))(Section);

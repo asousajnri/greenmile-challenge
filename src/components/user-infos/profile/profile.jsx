@@ -12,10 +12,10 @@ import {
 
 import photo from '../../../assets/images/photo-profile.jpg';
 
-const Profile = ({ isFetch }) => {
+const Profile = ({ isFetchinging }) => {
   return (
     <>
-      {isFetch ? (
+      {isFetchinging ? (
         <ProfileLoading />
       ) : (
         <FadeIn>
@@ -48,5 +48,5 @@ const Profile = ({ isFetch }) => {
 };
 
 export default connect(state => ({
-  isFetch: state.isFetch,
+  isFetchinging: state.isFetchinging,
 }))(Profile);

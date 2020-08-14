@@ -9,7 +9,7 @@ export const StyledUserSearch = styled.div`
   border-radius: 0.5rem;
 
   ${props =>
-    props.findedUSer &&
+    props.findedUser &&
     css`
       margin-bottom: 6rem;
 

@@ -3,9 +3,7 @@ import styled from 'styled-components';
 
 import PlaceholderEffect from '../../../assets/styles/placeholder-effect';
 
-import devices, {
-  breakpoints,
-} from '../../../assets/styles/devices';
+import devices from '../../../assets/styles/devices';
 
 export const StyledProfile = styled.div`
   margin-bottom: 4rem;

@@ -1,7 +1,41 @@
 import INITIAL_STATE from './initial-state';
-// import actions from './actions';
 
 const reducer = (state = INITIAL_STATE, action) => {
+  if (action.type === 'IS_FETCHINGING') {
+    return {
+      ...state,
+      isFetchinging: action.isFetchinging,
+    };
+  }
+
+  if (action.type === 'SET_DEV_DATA') {
+    return {
+      ...state,
+      devData: action.devData,
+    };
+  }
+
+  if (action.type === 'FIRED_SEARCH') {
+    return {
+      ...state,
+      firedSearch: action.firedSearch,
+    };
+  }
+
+  if (action.type === 'FINDED_USER') {
+    return {
+      ...state,
+      findedUser: action.findedUser,
+    };
+  }
+
+  if (action.type === 'FIRST_SEARCH') {
+    return {
+      ...state,
+      firstSearch: action.firstSearch,
+    };
+  }
+
   return state;
 };
 

@@ -3,9 +3,16 @@ import { connect } from 'react-redux';
 
 import { StyledContainer } from './container-styles';
 
-const Container = ({ children, findedUser }) => {
+const Container = ({
+  children,
+  findedUser,
+  firstSearch,
+}) => {
   return (
-    <StyledContainer findedUser={findedUser}>
+    <StyledContainer
+      findedUser={findedUser}
+      firstSearch={firstSearch}
+    >
       {children}
     </StyledContainer>
   );
@@ -13,4 +20,5 @@ const Container = ({ children, findedUser }) => {
 
 export default connect(state => ({
   findedUser: state.findedUser,
+  firstSearch: state.firstSearch,
 }))(Container);

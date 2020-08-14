@@ -10,10 +10,10 @@ import {
   StyledFooter,
 } from './starred-repository-styles';
 
-const StarredRepository = ({ isFetch }) => {
+const StarredRepository = ({ isFetchinging }) => {
   return (
     <>
-      {isFetch ? (
+      {isFetchinging ? (
         <StarredRepositoryLoading />
       ) : (
         <StyledStarredRepository>
@@ -53,5 +53,5 @@ const StarredRepository = ({ isFetch }) => {
 };
 
 export default connect(state => ({
-  isFetch: state.isFetch,
+  isFetchinging: state.isFetchinging,
 }))(StarredRepository);

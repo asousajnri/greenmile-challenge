@@ -5,19 +5,21 @@ import devices, {
 } from '../../assets/styles/devices';
 
 const styledFirstSearch = css`
+  flex-direction: column;
+
+  @media ${devices.tablet} {
+    padding-top: 6rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
   ${props =>
     props.findedUser
       ? css`
-          flex-direction: column;
           align-items: center;
-          padding: 4rem 2rem 6rem;
-
-          @media ${devices.tablet} {
-            padding-top: 6rem;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-          }
+          padding: 6rem 2rem 6rem;
+          height: auto;
         `
       : css`
           justify-content: center;
@@ -30,7 +32,7 @@ export const StyledContainer = styled.main`
   display: flex;
   max-width: ${breakpoints.desktop};
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   ${styledFirstSearch}
 `;

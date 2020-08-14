@@ -2,6 +2,8 @@ import React from 'react';
 import FadeIn from 'react-fade-in';
 import { connect } from 'react-redux';
 
+import * as ReduxActions from '../../store/actions';
+
 import loadingImage from '../../assets/images/loading.gif';
 
 import Button from '../button';
@@ -9,26 +11,36 @@ import Button from '../button';
 import { StyledWaitingForResearch } from './waiting-for-research-styles';
 import './fade-in.css';
 
-const FindedUser = ({ findedUser }) => {
+const FindedUser = ({ findedUser, dispatch }) => {
+  const handleClick = () => {
+    dispatch(ReduxActions.firedSearch(false));
+  };
+
   return (
     <>
       {findedUser ? (
         <>
-          <i class="far fa-laugh-beam"></i>
+          <i className="far fa-laugh-beam"></i>
           <p>Ooopa! acho que encontramos algo.</p>
 
-          <Button buttonTypeColor="white">
+          <Button
+            buttonTypeColor="white"
+            onClick={handleClick}
+          >
             Nova busca
           </Button>
         </>
       ) : (
         <>
-          <i class="far fa-sad-cry"></i>
+          <i className="far fa-sad-cry"></i>
           <p>
             Barbaridade tchê! nenhum <b>dev</b> foi
             encontrado.
           </p>
-          <Button buttonTypeColor="white">
+          <Button
+            buttonTypeColor="white"
+            onClick={handleClick}
+          >
             Tentar novamente
           </Button>
         </>
@@ -37,17 +49,27 @@ const FindedUser = ({ findedUser }) => {
   );
 };
 
-const WaitingForResearch = ({ isFetch, findedUser }) => {
+const WaitingForResearch = ({
+  isFetchinging,
+  findedUser,
+  firedSearch,
+  dispatch,
+}) => {
   return (
     <FadeIn className="waiting-for-research">
       <StyledWaitingForResearch
-        isFetch={isFetch}
+        isFetchinging={isFetchinging}
         findedUser={findedUser}
+        firedSearch={firedSearch}
       >
-        {isFetch ? (
+        {isFetchinging ? (
           <img src={loadingImage} alt="Loading Image" />
         ) : (
-          <FindedUser findedUser={findedUser} />
+          <FindedUser
+            findedUser={findedUser}
+            firedSearch={firedSearch}
+            dispatch={dispatch}
+          />
         )}
       </StyledWaitingForResearch>
     </FadeIn>
@@ -55,6 +77,7 @@ const WaitingForResearch = ({ isFetch, findedUser }) => {
 };
 
 export default connect(state => ({
-  isFetch: state.isFetch,
+  isFetchinging: state.isFetchinging,
   findedUser: state.findedUser,
+  firedSearch: state.firedSearch,
 }))(WaitingForResearch);

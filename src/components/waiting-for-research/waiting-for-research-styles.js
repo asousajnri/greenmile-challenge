@@ -11,20 +11,21 @@ export const StyledWaitingForResearch = styled.div`
   color: ${props => props.theme.white};
 
   ${props =>
-    props.isFetch &&
+    props.isFetchinging &&
     css`
       background: #0000007a;
     `}
 
   ${props =>
     props.findedUser &&
+    !props.isFetchinging &&
     css`
       background: ${props.theme.primary_color};
     `}
 
   ${props =>
     !props.findedUser &&
-    !props.isFetch &&
+    !props.isFetchinging &&
     css`
       background: ${props.theme.red};
     `}
