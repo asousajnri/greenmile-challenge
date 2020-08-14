@@ -6,11 +6,11 @@ import devices, {
 
 const styledFirstSearch = css`
   ${props =>
-    props.firstSearch
+    props.findedUser
       ? css`
           flex-direction: column;
           align-items: center;
-          padding: 4rem 2rem 0;
+          padding: 4rem 2rem 6rem;
 
           @media ${devices.tablet} {
             padding-top: 6rem;
@@ -22,7 +22,7 @@ const styledFirstSearch = css`
       : css`
           justify-content: center;
           align-items: center;
-          padding: 4rem 2rem 0;
+          padding: 0 2rem;
         `}
 `;
 
