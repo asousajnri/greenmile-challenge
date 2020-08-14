@@ -10,6 +10,7 @@ const StarredRepositories = ({ starredRepos }) => {
     <StyledStarredRepositories>
       {starredRepos.map(starredRepo => (
         <StarredRepository
+          key={starredRepo.id}
           fullName={starredRepo.full_name}
           git_url={starredRepo.git_url}
           language={starredRepo.language}
