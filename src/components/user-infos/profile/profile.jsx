@@ -10,9 +10,11 @@ import {
   StyledContent,
 } from './profile-styles';
 
-import photo from '../../../assets/images/photo-profile.jpg';
+const Profile = ({ isFetchinging, devData }) => {
+  console.log(devData);
 
-const Profile = ({ isFetchinging }) => {
+  const { avatar_url, bio, name, html_url } = devData.basic;
+
   return (
     <>
       {isFetchinging ? (
@@ -22,22 +24,16 @@ const Profile = ({ isFetchinging }) => {
           <StyledProfile>
             <StyledPhoto>
               <img
-                src={photo}
+                src={avatar_url}
                 alt="Foto do Dev no Github"
               />
             </StyledPhoto>
             <StyledContent>
-              <h2>Apelido do Dev</h2>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Voluptatem provident quae
-                odit fugiat eos a modi.
-              </p>
+              <h2>{name}</h2>
+              <p>{bio}</p>
               <span>
                 <i className="fab fa-github"></i>
-                <a href="https://github.com/asousajnri">
-                  URL do Github
-                </a>
+                <a href={html_url}>{html_url}</a>
               </span>
             </StyledContent>
           </StyledProfile>
@@ -49,4 +45,5 @@ const Profile = ({ isFetchinging }) => {
 
 export default connect(state => ({
   isFetchinging: state.isFetchinging,
+  devData: state.devData,
 }))(Profile);

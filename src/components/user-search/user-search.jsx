@@ -26,8 +26,6 @@ const UserSearch = ({
   const inputRef = useRef(null);
 
   const handleSubmit = async e => {
-    console.log('TESTE: ', inputRef.current.value);
-
     e.preventDefault();
 
     if (!firstSearch) {
@@ -38,12 +36,18 @@ const UserSearch = ({
       dispatch(ReduxActions.ifFetchinging(true));
       dispatch(ReduxActions.firedSearch(true));
 
-      const response = await api(inputRef.current.value);
+      const basic = await api(inputRef.current.value);
+      const starred = await api(
+        `${inputRef.current.value}/starred`
+      );
 
-      console.log(response);
-
-      if (response.data && response.status === 200) {
-        dispatch(ReduxActions.setDevData(response.data));
+      if (basic.data && basic.status === 200) {
+        dispatch(
+          ReduxActions.setDevData({
+            ...basic.data,
+            starred: [...starred.data],
+          })
+        );
         setTimeout(() => {
           dispatch(ReduxActions.findedUser(true));
         }, 3000);
