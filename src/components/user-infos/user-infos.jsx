@@ -14,8 +14,6 @@ const UserInfos = () => {
       <Section title="Repositórios com estrela">
         <StarreRepositories />
       </Section>
-
-      <Section title="Localização do DEV"></Section>
     </StyledUserInfos>
   );
 };
