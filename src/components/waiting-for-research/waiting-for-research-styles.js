@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const StyledWaitingForResearch = styled.div`
   height: 100%;
@@ -7,28 +7,12 @@ export const StyledWaitingForResearch = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem;
   color: ${props => props.theme.white};
 
   ${props =>
-    props.isFetchinging &&
-    css`
-      background: #0000007a;
-    `}
-
-  ${props =>
-    props.findedUser &&
-    !props.isFetchinging &&
-    css`
-      background: ${props.theme.primary_color};
-    `}
-
-  ${props =>
-    !props.findedUser &&
-    !props.isFetchinging &&
-    css`
-      background: ${props.theme.red};
-    `}
+    props.isFetchinging
+      ? 'background: #0000007a;'
+      : 'background: none;'};
 
   img {
     width: 15rem;

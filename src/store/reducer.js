@@ -8,7 +8,7 @@ const reducer = (state = INITIAL_STATE, action) => {
     };
   }
 
-  if (action.type === 'SET_DEV_DATA') {
+  if (action.type === 'DEV_DATA') {
     return {
       ...state,
       devData: action.devData,

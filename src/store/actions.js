@@ -2,7 +2,7 @@ export const setDevData = data => {
   localStorage.setItem('greenmile', JSON.stringify(data));
 
   return {
-    type: 'SET_DEV_DATA',
+    type: 'DEV_DATA',
     devData: data,
   };
 };

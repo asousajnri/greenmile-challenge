@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { connect } from 'react-redux';
 
 import {
@@ -9,9 +8,7 @@ import {
 } from './components';
 
 const App = ({ findedUser }) => {
-  if (findedUser) {
-    document.body.classList.add('heightAuto');
-  }
+  if (findedUser) document.body.classList.add('heightAuto');
 
   return (
     <Container findedUser={findedUser}>
