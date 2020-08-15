@@ -6,18 +6,31 @@ import {
   Marker,
   Popup,
 } from 'react-leaflet';
-import { Icon } from 'leaflet';
 
 import './leaflet.css';
+
+import geocode from '../../../utils/geocode';
 
 import DevLocationLoading from './dev-location-loading';
 import { StyledDevLocation } from './dev-location-styles';
 
-const DevLocation = ({ isFetchinging }) => {
+const DevLocation = ({ isFetchinging, devData }) => {
   const [position, setPosition] = useState([
     -3.71846,
     -38.541672,
   ]);
+
+  const { location, name, avatar_url } = devData;
+
+  const setLatLong = async () => {
+    const { lat, lng } = await geocode(location);
+
+    if (lat && lng) {
+      setPosition([lat, lng]);
+    }
+  };
+
+  setLatLong();
 
   return (
     <>
@@ -32,8 +45,8 @@ const DevLocation = ({ isFetchinging }) => {
             />
             <Marker position={position}>
               <Popup>
-                A pretty CSS3 popup. <br /> Easily
-                customizable.
+                <img src={avatar_url} alt={name} />
+                <h1>{name}</h1>
               </Popup>
             </Marker>
           </Map>
@@ -44,5 +57,6 @@ const DevLocation = ({ isFetchinging }) => {
 };
 
 export default connect(state => ({
+  devData: state.devData,
   isFetchinging: state.isFetchinging,
 }))(DevLocation);
