@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+
+import axios from 'axios';
+
 import {
   Map,
   TileLayer,
@@ -13,9 +16,27 @@ import DevLocationLoading from './dev-location-loading';
 import { StyledDevLocation } from './dev-location-styles';
 
 const DevLocation = ({ isFetchinging, devData }) => {
-  const position = [-3.71846, -38.541672];
+  const [position, setPosition] = useState[
+    (-3.71846, -38.541672)
+  ];
 
-  const { name, avatar_url } = devData;
+  const { location, name, avatar_url } = devData;
+
+  const getLatLng = async () => {
+    const response = await axios.get(
+      `https://www.mapquestapi.com/geocoding/v1/address?key=lEazw4PFcrR2oAEp5QFDHRBoh3JHAJhd&location=${location}`
+    );
+
+    const {
+      displayLatLng,
+    } = reponse.data.locations.results[0];
+
+    if (displayLatLng) {
+      setPosition([displayLatLng.lat, displayLatLng.lng]);
+    }
+  };
+
+  getLatLng();
 
   return (
     <>

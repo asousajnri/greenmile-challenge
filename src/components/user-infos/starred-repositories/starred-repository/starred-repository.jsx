@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 // import base64 from 'base-64';
 
-import axios from 'axios';
+// import axios from 'axios';
 // import * as api from '../../../../services/api';
 
 import StarredRepositoryLoading from './starred-repository-loading';
@@ -26,25 +26,19 @@ const StarredRepository = ({
   stargazers_count,
   description,
 }) => {
-  const handleStarRepository = async () => {
-    // const response = await api.user.put(
-    //   `/starred/${owner_login}/${repo_name}`,
-    //   {
-    //     headers: {
-    //       'content-length': '0',
-    //       authorization: `Basic ${base64.encode(
-    //         'user:password'
-    //       )}`,
-    //     },
-    //   }
-    // );
-
-    const url =
-      'https://www.mapquestapi.com/geocoding/v1/address?key=lEazw4PFcrR2oAEp5QFDHRBoh3JHAJhd&location=Fortaleza';
-    const response = await axios.get(url);
-
-    console.log(response);
-  };
+  // const handleStarRepository = async () => {
+  // const response = await api.user.put(
+  //   `/starred/${owner_login}/${repo_name}`,
+  //   {
+  //     headers: {
+  //       'content-length': '0',
+  //       authorization: `Basic ${base64.encode(
+  //         'user:password'
+  //       )}`,
+  //     },
+  //   }
+  // );
+  // };
 
   return (
     <>
@@ -56,7 +50,7 @@ const StarredRepository = ({
             <h3>
               <a href={git_url}>{fullName}</a>
             </h3>
-            <button onClick={handleStarRepository}>
+            <button>
               Star <i className="far fa-star"></i>
             </button>
           </StyledHeader>
