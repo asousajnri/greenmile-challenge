@@ -27,17 +27,17 @@ const StarredRepository = ({
   description,
 }) => {
   const handleStarRepository = async () => {
-    const response = await api.user.put(
-      `/starred/${owner_login}/${repo_name}`,
-      {
-        headers: {
-          'content-length': '0',
-          authorization: `Basic ${base64.encode(
-            'user:password'
-          )}`,
-        },
-      }
-    );
+    // const response = await api.user.put(
+    //   `/starred/${owner_login}/${repo_name}`,
+    //   {
+    //     headers: {
+    //       'content-length': '0',
+    //       authorization: `Basic ${base64.encode(
+    //         'user:password'
+    //       )}`,
+    //     },
+    //   }
+    // );
 
     const response = await api.user.get({
       headers: {
