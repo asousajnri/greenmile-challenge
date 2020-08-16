@@ -11,8 +11,6 @@ import {
 } from './profile-styles';
 
 const Profile = ({ isFetchinging, devData }) => {
-  console.log(devData);
-
   const { avatar_url, bio, name, html_url } = devData;
 
   return (

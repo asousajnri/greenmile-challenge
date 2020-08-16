@@ -2,7 +2,7 @@ import React from 'react';
 import FadeIn from 'react-fade-in';
 import { connect } from 'react-redux';
 
-import loadingImage from '../../assets/images/loading.gif';
+import loadingImage from '../../../assets/images/loading.gif';
 
 import Feedback from './feeedback';
 
@@ -13,7 +13,6 @@ const WaitingForResearch = ({
   isFetchinging,
   findedUser,
   firedSearch,
-  dispatch,
 }) => {
   return (
     <FadeIn className="waiting-for-research">

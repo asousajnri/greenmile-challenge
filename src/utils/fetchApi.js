@@ -9,6 +9,7 @@ const fetchApi = async userName => {
       const {
         id,
         avatar_url,
+        login,
         name,
         bio,
         html_url,
@@ -18,7 +19,10 @@ const fetchApi = async userName => {
       const starred = starredRepos.data.map(starredRepo => {
         return {
           id: starredRepo.id,
+          name: starredRepo.name,
           full_name: starredRepo.full_name,
+          owner_login: starredRepo.owner.login,
+          owner_avatar: starredRepo.owner.avatar_url,
           git_url: starredRepo.git_url,
           language: starredRepo.language,
           stargazers_count: starredRepo.stargazers_count,
@@ -30,6 +34,7 @@ const fetchApi = async userName => {
         id,
         avatar_url,
         name,
+        login,
         bio,
         html_url,
         location,
@@ -37,7 +42,7 @@ const fetchApi = async userName => {
       };
     }
   } catch (err) {
-    return err;
+    console.log(err);
   }
 };
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import * as ReduxActions from '../../../store/actions';
+import * as ReduxActions from '../../../../store/actions';
 
-import Button from '../../button';
+import Button from '../../../button';
 
 import { Finded, NotFound } from './feedback-styles';
 

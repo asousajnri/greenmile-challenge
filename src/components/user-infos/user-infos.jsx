@@ -8,20 +8,27 @@ import DevLocation from './dev-location';
 
 import { StyledUserInfos } from './user-infos-styles';
 
-const UserInfos = ({ findedUser }) => {
+const UserInfos = ({ findedUser, devData }) => {
+  const { starred, location } = devData;
+
   return (
     <StyledUserInfos>
       <Profile />
-      <Section title="Repositórios com estrela">
-        <StarreRepositories />
-      </Section>
-      <Section title="LocalizaçÃo do Dev">
-        <DevLocation />
-      </Section>
+      {starred && (
+        <Section title="Repositórios com estrela">
+          <StarreRepositories />
+        </Section>
+      )}
+      {location && (
+        <Section title="LocalizaçÃo do Dev">
+          <DevLocation />
+        </Section>
+      )}
     </StyledUserInfos>
   );
 };
 
 export default connect(state => ({
   findedUser: state.findedUser,
+  devData: state.devData,
 }))(UserInfos);

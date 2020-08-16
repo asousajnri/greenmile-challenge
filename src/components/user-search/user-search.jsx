@@ -4,12 +4,12 @@ import FadeIn from 'react-fade-in';
 
 import * as ReduxActions from '../../store/actions';
 
-import api from '../../services/api';
+import fetchApi from '../../utils/fetchApi';
 import timeout from '../../utils/timeout';
 
 import Button from '../button';
 import Form from '../form';
-import WaitingForSearch from '../waiting-for-research';
+import WaitingForSearch from './waiting-for-research';
 
 import {
   StyledUserSearch,
@@ -32,34 +32,20 @@ const UserSearch = ({
       dispatch(ReduxActions.ifFetchinging(true));
       dispatch(ReduxActions.firedSearch(true));
 
-      const basic = await api(inputRef.current.value);
-      const starred = await api(
-        `${inputRef.current.value}/starred`
+      const response = await fetchApi(
+        inputRef.current.value
       );
 
-      if (basic.data && basic.status === 200) {
-        dispatch(
-          ReduxActions.setDevData({
-            ...basic.data,
-            starred: [...starred.data],
-          })
-        );
-        timeout(() => {
-          dispatch(ReduxActions.findedUser(true));
-        });
+      if (response) {
+        dispatch(ReduxActions.setDevData(response));
+        timeout(dispatch(ReduxActions.findedUser(true)));
       } else {
-        timeout(() => {
-          dispatch(ReduxActions.findedUser(false));
-        });
+        timeout(dispatch(ReduxActions.findedUser(false)));
       }
     } catch (err) {
-      timeout(() => {
-        dispatch(ReduxActions.findedUser(false));
-      });
+      timeout(dispatch(ReduxActions.findedUser(false)));
     } finally {
-      timeout(() => {
-        dispatch(ReduxActions.ifFetchinging(false));
-      });
+      timeout(dispatch(ReduxActions.ifFetchinging(false)));
     }
   };
 

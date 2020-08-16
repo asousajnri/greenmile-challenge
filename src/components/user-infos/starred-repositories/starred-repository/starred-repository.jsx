@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import base64 from 'base-64';
+import axios from 'axios';
+
 import StarredRepositoryLoading from './starred-repository-loading';
 
 import {
@@ -12,12 +15,33 @@ import {
 
 const StarredRepository = ({
   isFetchinging,
+  repo_id,
+  owner_login,
+  repo_name,
+  findedUser,
   fullName,
   git_url,
   language,
   stargazers_count,
   description,
 }) => {
+  const handleStarRepository = async () => {
+    const url = 'http://api.github.com/user';
+    const response = await axios.get(url, {
+      mode: 'cors',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers':
+          'Origin, X-Requested-With, Content-Type, Accept',
+        Authorization: `Basic ${base64.encode(
+          'asousajnri:joao832verdade'
+        )}`,
+      },
+    });
+
+    console.log(response);
+  };
+
   return (
     <>
       {isFetchinging ? (
@@ -28,7 +52,7 @@ const StarredRepository = ({
             <h3>
               <a href={git_url}>{fullName}</a>
             </h3>
-            <button>
+            <button onClick={handleStarRepository}>
               Star <i className="far fa-star"></i>
             </button>
           </StyledHeader>

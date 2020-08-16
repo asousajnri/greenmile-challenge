@@ -22,16 +22,6 @@ const DevLocation = ({ isFetchinging, devData }) => {
 
   const { location, name, avatar_url } = devData;
 
-  const setLatLong = async () => {
-    const { lat, lng } = await geocode(location);
-
-    if (lat && lng) {
-      setPosition([lat, lng]);
-    }
-  };
-
-  setLatLong();
-
   return (
     <>
       {isFetchinging ? (
