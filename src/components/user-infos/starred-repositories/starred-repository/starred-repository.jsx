@@ -39,7 +39,7 @@ const StarredRepository = ({
     //   }
     // );
 
-    const response = await api.user.get({
+    const response = await api.user({
       headers: {
         'content-length': '0',
         authorization: `Basic ${base64.encode(
