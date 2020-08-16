@@ -27,13 +27,15 @@ const DevLocation = ({ isFetchinging, devData }) => {
       `https://www.mapquestapi.com/geocoding/v1/address?key=lEazw4PFcrR2oAEp5QFDHRBoh3JHAJhd&location=${location}`
     );
 
-    const {
-      displayLatLng,
-    } = response.data.locations.results[0];
+    console.log(response);
 
-    if (displayLatLng) {
-      setPosition([displayLatLng.lat, displayLatLng.lng]);
-    }
+    // const {
+    //   displayLatLng,
+    // } = response.data.locations.results[0];
+
+    // if (displayLatLng) {
+    //   setPosition([displayLatLng.lat, displayLatLng.lng]);
+    // }
   };
 
   getLatLng();
