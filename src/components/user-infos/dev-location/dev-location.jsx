@@ -16,8 +16,11 @@ import DevLocationLoading from './dev-location-loading';
 import { StyledDevLocation } from './dev-location-styles';
 
 const DevLocation = ({ isFetchinging, devData }) => {
-  const [position, setPosition] = useState[
-    (-3.71846, -38.541672)
+  // const [position, setPosition] = useState[
+  //   (-3.71846, -38.541672)
+  // ];
+
+  const position = [-3.71846, -38.541672];
   ];
 
   const { location, name, avatar_url } = devData;
@@ -29,7 +32,7 @@ const DevLocation = ({ isFetchinging, devData }) => {
 
     console.log(response);
 
-    setPosition([-3.71846, -38.541672]);
+    // setPosition([-3.71846, -38.541672]);
 
     // const {
     //   displayLatLng,
