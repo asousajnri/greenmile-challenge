@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import base64 from 'base-64';
 
+import axios from 'axios';
 import * as api from '../../../../services/api';
 
 import StarredRepositoryLoading from './starred-repository-loading';
@@ -26,17 +27,23 @@ const StarredRepository = ({
   description,
 }) => {
   const handleStarRepository = async () => {
-    const response = await api.user.put(
-      `/starred/${owner_login}/${repo_name}`,
-      {
-        headers: {
-          'content-length': '0',
-          authorization: `Basic ${base64.encode(
-            'user:password'
-          )}`,
-        },
-      }
-    );
+    // const response = await api.user.put(
+    //   `/starred/${owner_login}/${repo_name}`,
+    //   {
+    //     headers: {
+    //       'content-length': '0',
+    //       authorization: `Basic ${base64.encode(
+    //         'user:password'
+    //       )}`,
+    //     },
+    //   }
+    // );
+
+    // lEazw4PFcrR2oAEp5QFDHRBoh3JHAJhd
+
+    const url =
+      'http://www.mapquestapi.com/geocoding/v1/caucaia?key=lEazw4PFcrR2oAEp5QFDHRBoh3JHAJhd&location=Brazil';
+    const response = await axios.get(url);
 
     console.log(response);
   };
