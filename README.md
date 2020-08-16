@@ -1,6 +1,6 @@
 Esse projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
 
-Públicado para testes em Netlify [Netlify](https://epic-chandrasekhar-e318d3.netlify.app/).
+Públicado para testes em Netlify [GreenMile Challenge](https://epic-chandrasekhar-e318d3.netlify.app/).
 
 ## Available Scripts to Create React App
 
