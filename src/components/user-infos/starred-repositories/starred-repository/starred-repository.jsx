@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import base64 from 'base-64';
+// import base64 from 'base-64';
 
 import axios from 'axios';
-import * as api from '../../../../services/api';
+// import * as api from '../../../../services/api';
 
 import StarredRepositoryLoading from './starred-repository-loading';
 

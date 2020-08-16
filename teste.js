@@ -2,9 +2,8 @@ const base64 = require('base-64');
 const axios = require('axios');
 
 const fetchApi = async () => {
-  const url =
-    'https://api.github.com/user/starred/chakra-ui/chakra-ui';
-  const response = await axios.put(url, {
+  const url = 'http://api.github.com/user/star';
+  const response = await axios.get(url, {
     headers: {
       Authorization: `Basic ${base64.encode(
         'asousajnri:joao832verdade'

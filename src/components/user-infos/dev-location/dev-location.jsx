@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import {
   Map,
@@ -9,18 +9,13 @@ import {
 
 import './leaflet.css';
 
-import geocode from '../../../utils/geocode';
-
 import DevLocationLoading from './dev-location-loading';
 import { StyledDevLocation } from './dev-location-styles';
 
 const DevLocation = ({ isFetchinging, devData }) => {
-  const [position, setPosition] = useState([
-    -3.71846,
-    -38.541672,
-  ]);
+  const position = [-3.71846, -38.541672];
 
-  const { location, name, avatar_url } = devData;
+  const { name, avatar_url } = devData;
 
   return (
     <>
