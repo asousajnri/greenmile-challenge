@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import axios from 'axios';
+// import axios from 'axios';
 
 import {
   Map,
@@ -22,20 +22,20 @@ const DevLocation = ({ isFetchinging, devData }) => {
 
   const position = [-3.71846, -38.541672];
 
-  const { location, name, avatar_url } = devData;
+  // const { location, name, avatar_url } = devData;
 
-  const getLatLng = async () => {
-    const response = await axios.get(
-      `https://www.mapquestapi.com/geocoding/v1/address?key=lEazw4PFcrR2oAEp5QFDHRBoh3JHAJhd&location=${location}`
-    );
+  // const getLatLng = async () => {
+  //   const response = await axios.get(
+  //     `https://www.mapquestapi.com/geocoding/v1/address?key=lEazw4PFcrR2oAEp5QFDHRBoh3JHAJhd&location=${location}`
+  //   );
 
-    console.log(response);
+  //   console.log(response.data.results.locations[0]);
 
     // setPosition([-3.71846, -38.541672]);
 
     // const {
     //   displayLatLng,
-    // } = response.data.locations.results[0];
+    // } = response.data.results.locations[0];
 
     // if (displayLatLng) {
     //   setPosition([displayLatLng.lat, displayLatLng.lng]);
