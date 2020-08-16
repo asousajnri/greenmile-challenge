@@ -29,7 +29,7 @@ const DevLocation = ({ isFetchinging, devData }) => {
 
     const {
       displayLatLng,
-    } = reponse.data.locations.results[0];
+    } = response.data.locations.results[0];
 
     if (displayLatLng) {
       setPosition([displayLatLng.lat, displayLatLng.lng]);
