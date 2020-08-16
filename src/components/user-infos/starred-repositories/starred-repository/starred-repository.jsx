@@ -54,7 +54,7 @@ const StarredRepository = ({
     //   'http://www.mapquestapi.com/geocoding/v1/caucaia?key=lEazw4PFcrR2oAEp5QFDHRBoh3JHAJhd&location=Brazil';
     // const response = await axios.get(url);
 
-    // console.log(response);
+    console.log(response);
   };
 
   return (
