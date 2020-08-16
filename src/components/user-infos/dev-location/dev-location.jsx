@@ -31,18 +31,18 @@ const DevLocation = ({ isFetchinging, devData }) => {
 
   //   console.log(response.data.results.locations[0]);
 
-    // setPosition([-3.71846, -38.541672]);
+  // setPosition([-3.71846, -38.541672]);
 
-    // const {
-    //   displayLatLng,
-    // } = response.data.results.locations[0];
+  // const {
+  //   displayLatLng,
+  // } = response.data.results.locations[0];
 
-    // if (displayLatLng) {
-    //   setPosition([displayLatLng.lat, displayLatLng.lng]);
-    // }
-  };
+  // if (displayLatLng) {
+  //   setPosition([displayLatLng.lat, displayLatLng.lng]);
+  // }
+  // };
 
-  getLatLng();
+  // getLatLng();
 
   return (
     <>
