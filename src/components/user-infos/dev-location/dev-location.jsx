@@ -29,6 +29,8 @@ const DevLocation = ({ isFetchinging, devData }) => {
 
     console.log(response);
 
+    setPosition([-3.71846, -38.541672]);
+
     // const {
     //   displayLatLng,
     // } = response.data.locations.results[0];
