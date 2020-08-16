@@ -4,7 +4,7 @@ import FadeIn from 'react-fade-in';
 
 import * as ReduxActions from '../../store/actions';
 
-import fetchApi from '../../utils/fetchApi';
+import fetchApiBasicInfos from '../../utils/fetch-api-basic-infos';
 import timeout from '../../utils/timeout';
 
 import Button from '../button';
@@ -32,7 +32,7 @@ const UserSearch = ({
       dispatch(ReduxActions.ifFetchinging(true));
       dispatch(ReduxActions.firedSearch(true));
 
-      const response = await fetchApi(
+      const response = await fetchApiBasicInfos(
         inputRef.current.value
       );
 
