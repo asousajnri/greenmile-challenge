@@ -22,7 +22,7 @@ const DevLocation = ({ isFetchinging, devData }) => {
 
   const position = [-3.71846, -38.541672];
 
-  const { location, name, avatar_url } = devData;
+  const { name, avatar_url } = devData;
 
   // const getLatLng = async () => {
   //   const response = await axios.get(
