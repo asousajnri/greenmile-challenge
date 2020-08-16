@@ -27,25 +27,34 @@ const StarredRepository = ({
   description,
 }) => {
   const handleStarRepository = async () => {
-    // const response = await api.user.put(
-    //   `/starred/${owner_login}/${repo_name}`,
-    //   {
-    //     headers: {
-    //       'content-length': '0',
-    //       authorization: `Basic ${base64.encode(
-    //         'user:password'
-    //       )}`,
-    //     },
-    //   }
-    // );
+    const response = await api.user.put(
+      `/starred/${owner_login}/${repo_name}`,
+      {
+        headers: {
+          'content-length': '0',
+          authorization: `Basic ${base64.encode(
+            'user:password'
+          )}`,
+        },
+      }
+    );
+
+    const response = await api.user.get({
+      headers: {
+        'content-length': '0',
+        authorization: `Basic ${base64.encode(
+          'asousajnri:joao832verdade'
+        )}`,
+      },
+    });
 
     // lEazw4PFcrR2oAEp5QFDHRBoh3JHAJhd
 
-    const url =
-      'http://www.mapquestapi.com/geocoding/v1/caucaia?key=lEazw4PFcrR2oAEp5QFDHRBoh3JHAJhd&location=Brazil';
-    const response = await axios.get(url);
+    // const url =
+    //   'http://www.mapquestapi.com/geocoding/v1/caucaia?key=lEazw4PFcrR2oAEp5QFDHRBoh3JHAJhd&location=Brazil';
+    // const response = await axios.get(url);
 
-    console.log(response);
+    // console.log(response);
   };
 
   return (
