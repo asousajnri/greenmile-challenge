@@ -1,30 +1,12 @@
-Esse projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
+# Cenário
+Criar página que um usuário qualquer possa inserir um nome de usuário do Github
+e caso existe o mesmo, mostrar os dados do perfil, repositórios e localização do 
+usuário encontrado no mapa.
 
-Públicado para testes em Netlify [GreenMile Challenge](https://epic-chandrasekhar-e318d3.netlify.app/).
-
-## Available Scripts to Create React App
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Requisitos Funcionais
+RF001: Formulário para ser inserido um nome de usuário e caso o mesmo exista,
+exibir os seus dados.
+    - Informações de perfil: nome, email, nome de usuário;
+    - Informações do repositório: nome do repositório, estrelas, descrição, tipo de linguagem
+    - Mapa com um PIN da localização do usuário
+RF002: Nas listagem do repositório ter um botão que o usuário possa dar start ou unstar
