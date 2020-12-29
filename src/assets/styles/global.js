@@ -20,10 +20,6 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
-
-    &.heightAuto {
-      height: auto;
-    };
   }
 
   body {
