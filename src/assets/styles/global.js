@@ -24,7 +24,7 @@ export default createGlobalStyle`
 
   body {
     background-color: ${props =>
-      props.theme.background_color_body};
+      props.theme.body};
   }
 
   #root {

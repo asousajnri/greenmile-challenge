@@ -1,20 +1,15 @@
 export default {
-  name: 'Default',
+  name: 'default',
 
-  primary_color: '#8BB03E',
-  secondary_color: '#28343D',
+  primary: '#8BB03E',
+  secondary: '#28343D',
 
   white: '#FFFFFF',
   black: '#333333',
   red: '#f00f00',
+  gray: '#586069',
 
-  background_color_body: '#E9EBEE',
-  background_user_search: '#FFFFFF',
-
-  button_primary: '#8BB03E',
-  button_secondary: '#28343D',
-  button_white: '#FFFFFF',
-
-  paraghaph_color: '#696969',
-  text_gray: '#586069',
+  body: '#E9EBEE',
+  user_search: '#FFFFFF',
+  paraghaph: '#696969',
 };

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const App = ({ findedUser }) => {
+const App = () => {
   return (
-    <h1></h1>
+    <h1>
+      Testando!
+    </h1>
   );
 };
 
-export default connect(state => ({
-  findedUser: state.findedUser,
-}))(App);
+export default App;
