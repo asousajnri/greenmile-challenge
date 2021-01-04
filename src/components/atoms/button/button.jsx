@@ -9,7 +9,7 @@ const Button = ({
     label = 'Button', 
     primary, 
     secondary,
-    radius = true,
+    noRadius,
     disabled,
     isLoading,
     bold,
@@ -23,12 +23,13 @@ const Button = ({
             disabled={disabled}
             primary={primary}
             secondary={secondary}
-            radius={radius}
+            noRadius={noRadius}
             isLoading={isLoading}
             bold={bold}
             onClick={onClick}
-        >   {ButtonIcon && <ButtonIcon className="button-icon" />}
-            {isLoading ? 'Carregando...' : label}
+        >   
+            {/* {ButtonIcon && <ButtonIcon className="button-icon" />} */}
+            <span aria-label="button-text">{isLoading ? 'Carregando...' : label}</span>
         </StyledButton>
     );
 };

@@ -6,7 +6,9 @@ export default {
     component: Button
 }
 
-const Template = (args) => <Button {...args} />;
+const Template = args => <Button {...args} />;
+
+export const Default = Template.bind({});
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -14,10 +16,8 @@ Primary.args = {
     label: 'Button Primary',
     radius: true,
     disabled: false,
-    isLoading: false,
     bold: false,
 };
-
 
 export const Secondary = Template.bind({});
 Secondary.args = {
@@ -31,4 +31,12 @@ WithIcon.args = {
     ...Primary.args,
     icon: 'FiSmile',
     label: 'With Icon'
+};
+
+export const IsLoading = Template.bind({});
+IsLoading.args = {
+    ...Primary.args,
+    label: 'Is Loading',
+    isLoading: true,
+    disabled: true,
 };
