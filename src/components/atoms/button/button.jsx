@@ -28,7 +28,7 @@ const Button = ({
             bold={bold}
             onClick={onClick}
         >   
-            {/* {ButtonIcon && <ButtonIcon className="button-icon" />} */}
+            {ButtonIcon && <ButtonIcon aria-label="button-icon" className="button-icon" />}
             <span aria-label="button-text">{isLoading ? 'Carregando...' : label}</span>
         </StyledButton>
     );

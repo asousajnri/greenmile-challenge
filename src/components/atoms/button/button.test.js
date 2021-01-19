@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-
-import defaultTheme from '../../../assets/styles/themes/default';
+import userEvent from '@testing-library/user-event';
 
 import Button from './button';
 
@@ -23,5 +21,33 @@ describe('<Button />', () => {
         const buttonText = screen.getByText(/Carregando.../i, { selector: 'span' });
 
         expect(buttonText).toBeInTheDocument();
+    });
+
+    it('should render with icon', () => {
+        render(<Button label="Button" icon="FiFeather" />);
+
+        const ariaLabelIcon = screen.getByLabelText(/button-icon/i, { selector: 'svg' });
+        
+        expect(ariaLabelIcon).toBeInTheDocument();
+    });
+
+    it('should call onCLick when user clicks', () => {
+        const onClick = jest.fn();
+        render(<Button onClick={onClick} />);
+
+        const button = screen.getByRole('button');
+        userEvent.click(button);
+
+        expect(onClick).toHaveBeenCalled();
+    });
+
+    it('should call onCLick once one', () => {
+        const onClick = jest.fn();
+        render(<Button onClick={onClick} />);
+
+        const button = screen.getByRole('button');
+        userEvent.click(button);
+
+        expect(onClick).toHaveBeenCalledTimes(1);
     });
 })
