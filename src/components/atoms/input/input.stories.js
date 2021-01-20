@@ -11,7 +11,7 @@ const Template = args => <InputComponent {...args} />;
 
 export const Input = Template.bind({});
 Input.args = {
-  radius: true,
+  borderRadius: true,
 };
 
 export const InputWithLabel = Template.bind({});

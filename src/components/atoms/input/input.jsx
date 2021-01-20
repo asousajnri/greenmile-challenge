@@ -2,11 +2,22 @@ import React from 'react';
 
 import { StyledInput, StyledLabel } from './input-styles';
 
-const Input = ({ type = 'text', placeholder, radius, label }) => {
+const Input = ({ 
+  type = 'text', 
+  placeholder, 
+  borderRadius, 
+  label,
+  name,
+}) => {
   return (
-    <StyledInput placeholder={placeholder} radius={radius}>
-      {/* {label && <StyledLabel>{label}</StyledLabel>} */}
-      <input aria-label="input-text" type={type} />
+    <StyledInput placeholder={placeholder} borderRadius={borderRadius}>
+      {label && <StyledLabel 
+        aria-label="input-label" 
+        htmlFor={name}
+      >
+        {label}
+      </StyledLabel>}
+      <input id={name} aria-label="input-text" type={type} />
     </StyledInput>
   );
 };

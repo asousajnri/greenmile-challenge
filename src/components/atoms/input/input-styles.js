@@ -8,7 +8,7 @@ export const StyledInput = styled.div`
     min-height: 4.5rem;
     border: 2px solid ${props => props.theme.gray};
     padding: 0 2rem;
-    border-radius: ${props => (props.radius ? '0.5rem' : 'none')};
+    border-radius: ${props => (props.borderRadius ? '0.5rem' : 'none')};
     width: 100%;
     font-size: 1.6rem;
 
