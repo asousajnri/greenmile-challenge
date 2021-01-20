@@ -16,20 +16,24 @@ const Button = ({
 }) => {
   const ButtonIcon = icon ? ButtonIcons[icon || 'FiAlertCircle'] : null;
 
-    return (
-        <StyledButton 
-            disabled={disabled}
-            primary={primary}
-            secondary={secondary}
-            noRadius={noRadius}
-            isLoading={isLoading}
-            bold={bold}
-            onClick={onClick}
-        >   
-            {ButtonIcon && <ButtonIcon aria-label="button-icon" className="button-icon" />}
-            <span aria-label="button-text">{isLoading ? 'Carregando...' : label}</span>
-        </StyledButton>
-    );
+  return (
+    <StyledButton
+      disabled={disabled}
+      primary={primary}
+      secondary={secondary}
+      noRadius={noRadius}
+      isLoading={isLoading}
+      bold={bold}
+      onClick={onClick}
+    >
+      {ButtonIcon && (
+        <ButtonIcon aria-label="button-icon" className="button-icon" />
+      )}
+      <span aria-label="button-text">
+        {isLoading ? 'Carregando...' : label}
+      </span>
+    </StyledButton>
+  );
 };
 
 export default Button;

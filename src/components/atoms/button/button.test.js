@@ -29,32 +29,35 @@ describe('<Button />', () => {
     expect(container.firstChild).toHaveStyle({
       pointerEvents: 'none',
     });
+  });
 
-    it('should render with icon', () => {
-        render(<Button label="Button" icon="FiFeather" />);
+  it('should render with icon', () => {
+    render(<Button label="Button" icon="FiFeather" />);
 
-        const ariaLabelIcon = screen.getByLabelText(/button-icon/i, { selector: 'svg' });
-        
-        expect(ariaLabelIcon).toBeInTheDocument();
+    const ariaLabelIcon = screen.getByLabelText(/button-icon/i, {
+      selector: 'svg',
     });
 
-    it('should call onCLick when user clicks', () => {
-        const onClick = jest.fn();
-        render(<Button onClick={onClick} />);
+    expect(ariaLabelIcon).toBeInTheDocument();
+  });
 
-        const button = screen.getByRole('button');
-        userEvent.click(button);
+  it('should call onCLick when user clicks', () => {
+    const onClick = jest.fn();
+    render(<Button onClick={onClick} />);
 
-        expect(onClick).toHaveBeenCalled();
-    });
+    const button = screen.getByRole('button');
+    userEvent.click(button);
 
-    it('should call onCLick once one', () => {
-        const onClick = jest.fn();
-        render(<Button onClick={onClick} />);
+    expect(onClick).toHaveBeenCalled();
+  });
 
-        const button = screen.getByRole('button');
-        userEvent.click(button);
+  it('should call onCLick once one', () => {
+    const onClick = jest.fn();
+    render(<Button onClick={onClick} />);
 
-        expect(onClick).toHaveBeenCalledTimes(1);
-    });
-})
+    const button = screen.getByRole('button');
+    userEvent.click(button);
+
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+});
