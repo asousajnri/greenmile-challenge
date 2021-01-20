@@ -6,21 +6,28 @@ import userEvent from '@testing-library/user-event';
 import Button from './button';
 
 describe('<Button />', () => {
-    it('should render without props', () => {
-        const { container } = render(<Button />);
+  it('should render without props', () => {
+    const { container } = render(<Button />);
 
-        const buttonText = screen.getByText(/Button/i, { selector: 'span' });
-
-        expect(buttonText).toBeInTheDocument();
-        expect(container.firstChild).toMatchSnapshot();
+    const buttonText = screen.getByText(/Button/i, {
+      selector: 'span',
     });
 
-    it('should render prop (Loading)', () => {
-        render(<Button isLoading disabled />);
+    expect(buttonText).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 
-        const buttonText = screen.getByText(/Carregando.../i, { selector: 'span' });
+  it('should render prop (Loading)', () => {
+    const { container } = render(<Button isLoading disabled />);
 
-        expect(buttonText).toBeInTheDocument();
+    const buttonText = screen.getByText(/Carregando.../i, {
+      selector: 'span',
+    });
+
+    expect(buttonText).toBeInTheDocument();
+    expect(container.firstChild).toBeDisabled();
+    expect(container.firstChild).toHaveStyle({
+      pointerEvents: 'none',
     });
 
     it('should render with icon', () => {

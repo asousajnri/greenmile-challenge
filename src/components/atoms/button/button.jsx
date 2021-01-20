@@ -1,22 +1,20 @@
 import React from 'react';
 import * as ButtonIcons from 'react-icons/fi';
 
-import {
-    StyledButton
-} from './button-styles';
+import { StyledButton } from './button-styles';
 
-const Button = ({ 
-    label = 'Button', 
-    primary, 
-    secondary,
-    noRadius,
-    disabled,
-    isLoading,
-    bold,
-    icon,
-    onClick,
+const Button = ({
+  label = 'Button',
+  primary,
+  secondary,
+  noRadius,
+  disabled,
+  isLoading,
+  bold,
+  icon,
+  onClick,
 }) => {
-    const ButtonIcon = icon ? ButtonIcons[icon || 'FiAlertCircle'] : null;
+  const ButtonIcon = icon ? ButtonIcons[icon || 'FiAlertCircle'] : null;
 
     return (
         <StyledButton 
